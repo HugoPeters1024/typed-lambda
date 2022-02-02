@@ -117,7 +117,7 @@ chain lhs rhs = Lambda $ App (sinkTerm1 rhs) (App (sinkTerm1 lhs) (Var Z))
 discardfirst :: Exp (a -> b -> b)
 discardfirst = Lambda $ Lambda $ Var Z
 
--- boolean logic
+-- | boolean logic
 
 true = Lambda $ Lambda $ Var (S Z)
 false = Lambda $ Lambda $ Var Z
@@ -134,10 +134,13 @@ intToLambda :: Int -> Exp ((a -> a) -> a -> a)
 intToLambda 0 = zero
 intToLambda n = reduce $ incr `App` intToLambda (n-1)
 
-mockingbird = Lambda $ App (sinkTerm1 (Var Z)) (Var Z)
+-- | Impossible :(
+-- mockingbird = Lambda $ App (Var Z) (Var Z)
 
-ycombinator = Lambda $ App
-    (sinkTerm1 (Lambda $ App (Var (S Z)) (App (sinkTerm1 (Var Z)) (Var Z))))
-    (Lambda $ App (Var (S Z)) (App (sinkTerm1 (Var Z)) (Var Z)))
+-- | Also not possible :(
+--ycombinator :: Exp ((b -> b) -> b)
+--ycombinator = Lambda $ App
+--    (Lambda (App (Var (S Z)) (App (Var Z) (Var Z))))
+--    (Lambda (App (Var (S Z)) (App (Var Z) (Var Z))))
 
 

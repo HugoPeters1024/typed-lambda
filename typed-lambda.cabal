@@ -28,6 +28,7 @@ executable typed-lambda
     other-modules:    Simplest
                       Harder
                       Complete
+                      Scoped
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
