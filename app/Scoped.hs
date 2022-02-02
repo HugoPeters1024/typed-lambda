@@ -97,7 +97,7 @@ true :: Exp
 true = Lambda $ Lambda $ Var (S Z)
 
 false :: Exp
-false = Lambda $ Lambda $ Var (S Z)
+false = Lambda $ Lambda $ Var Z
 
 ifte = Lambda $ Lambda $ Lambda $ Var (S (S Z)) `App` Var (S Z) `App` Var Z
 
